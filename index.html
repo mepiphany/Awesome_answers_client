@@ -13,12 +13,25 @@
       <a href='javascript:void(0);' data-id="{{ id }}">{{ title }}</a>
       <hr>
     </script>
-    <script id="question-deatils" type="x-tmpl-mustache">
+    <script id="question-details" type="x-tmpl-mustache">
+      <a href="javascript:void(0);" id="back"> &lt; Back </a>
       <h1>{{ title }}</h1>
-      <p>{{ description }}</p>
+      <p>{{ body }}</p>
       <p>Created At: {{ created_at }}</p>
+      <a href="javascript:void(0)" id="show-answers" data-q-id="{{ id }}">
+        Show Answers
+      </a>
+      <div id='answers-container'></div>
       <hr>
     </script>
+
+    <script id="answer" type="x-tmpl-mustache">
+      <p>{{ body }}</p>
+      <p>Created At {{ created_at }}<p>
+      <hr>
+    </script>
+
     <div id="questions">Loading...</div>
+    <div id="question-details-container"></div>
   </body>
 </html>
